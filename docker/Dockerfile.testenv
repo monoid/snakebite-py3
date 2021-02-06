@@ -1,0 +1,9 @@
+FROM openjdk:8
+RUN apt-get update && apt-get install -y python3-pip && apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN pip3 install argparse protobuf==3.0.0b2.post2 \
+    nose unittest2 mock virtualenv\>=1.11.2 \
+    tox\>=1.8.0,\<3.0.0 \
+    sphinx sphinx_rtd_theme fig
+
+# Used by tests
+ENV USER=root

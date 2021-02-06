@@ -1,0 +1,12 @@
+version: '2.2'
+
+services:
+  testenv:
+    image: localhost:5000/snakebite-testenv
+    build:
+      context: ./
+      dockerfile: Dockerfile.testenv
+    volumes:
+      - ../:/src:rw
+    working_dir: /src
+    command: timeout -v 60m tox
