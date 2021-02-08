@@ -1,4 +1,4 @@
-FROM openjdk:8
+FROM openjdk:9
 RUN apt-get update && apt-get install -y python3-pip && apt-get clean && rm -rf /var/lib/apt/lists/*
 RUN pip3 install argparse protobuf==3.0.0b2.post2 \
     nose unittest2 mock virtualenv\>=1.11.2 \

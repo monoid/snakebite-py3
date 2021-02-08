@@ -9,4 +9,4 @@ services:
     volumes:
       - ../:/src:rw
     working_dir: /src
-    command: timeout -v 60m tox
+    command: timeout 60m tox
